@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Julian Suss — Google Ads Automation</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #fff;
+  color: #1a1f36;
+  line-height: 1.6;
+}
+
+/* NAV */
+nav {
+  border-bottom: 1px solid #e8e8f0;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.logo { font-weight: 600; font-size: 15px; letter-spacing: -.3px; }
+.nav-contact {
+  font-size: 13px;
+  color: #6b7280;
+  text-decoration: none;
+}
+.nav-contact:hover { color: #1a1f36; }
+
+/* LAYOUT */
+.wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* HERO */
+.hero {
+  padding: 72px 0 64px;
+  border-bottom: 1px solid #e8e8f0;
+}
+.hero-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -.5px;
+  margin-bottom: 20px;
+  max-width: 580px;
+}
+.hero p {
+  font-size: 17px;
+  color: #4b5563;
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+/* SECTION */
+section {
+  padding: 56px 0;
+  border-bottom: 1px solid #e8e8f0;
+}
+section:last-child { border-bottom: none; }
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-bottom: 28px;
+}
+h2 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -.3px;
+  margin-bottom: 14px;
+}
+p { color: #4b5563; font-size: 15px; line-height: 1.7; }
+p + p { margin-top: 12px; }
+
+/* SERVICES */
+.services {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-top: 32px;
+  border: 1px solid #e8e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.service-item {
+  padding: 22px 24px;
+  border-right: 1px solid #e8e8f0;
+  border-bottom: 1px solid #e8e8f0;
+}
+.service-item:nth-child(2n) { border-right: none; }
+.service-item:nth-last-child(-n+2) { border-bottom: none; }
+.service-item h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1f36;
+  margin-bottom: 6px;
+}
+.service-item p {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* TOOL */
+.tool-block {
+  margin-top: 32px;
+  background: #f8f9fc;
+  border: 1px solid #e8e8f0;
+  border-radius: 10px;
+  padding: 28px;
+}
+.tool-block h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #1a1f36;
+}
+.module-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.module-list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 13px;
+  color: #4b5563;
+  line-height: 1.5;
+}
+.module-list li::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #1a1f36;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+.module-list strong {
+  color: #1a1f36;
+  font-weight: 500;
+}
+
+/* API */
+.api-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 28px;
+  font-size: 13px;
+}
+.api-table th {
+  text-align: left;
+  font-weight: 600;
+  color: #1a1f36;
+  padding: 10px 14px;
+  background: #f8f9fc;
+  border: 1px solid #e8e8f0;
+}
+.api-table td {
+  padding: 10px 14px;
+  border: 1px solid #e8e8f0;
+  color: #4b5563;
+  vertical-align: top;
+}
+.api-table tr:nth-child(even) td { background: #fafafa; }
+code {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 12px;
+  color: #1a1f36;
+  background: #f1f1f5;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+/* CONTACT */
+.contact-block {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 14px;
+}
+.contact-label {
+  font-weight: 500;
+  color: #1a1f36;
+  min-width: 80px;
+}
+.contact-value { color: #4b5563; }
+.contact-value a { color: #1a1f36; text-decoration: none; border-bottom: 1px solid #e8e8f0; }
+.contact-value a:hover { border-color: #1a1f36; }
+
+/* FOOTER */
+footer {
+  padding: 32px 0;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+@media (max-width: 520px) {
+  .services { grid-template-columns: 1fr; }
+  .service-item { border-right: none; }
+  .service-item:last-child { border-bottom: none; }
+}
+</style>
+</head>
+<body>
+
+<nav class="wrap">
+  <span class="logo">Julian Suss</span>
+  <a href="mailto:julian.suss@gmail.com" class="nav-contact">julian.suss@gmail.com</a>
+</nav>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-label">Google Ads Automation</div>
+    <h1>Campaign management tools for e-commerce advertisers</h1>
+    <p>Julian Suss is an independent digital marketing practice that builds and manages Google Ads campaigns for e-commerce and B2B clients across Argentina and Mexico. I also develop internal automation tools to optimize campaign performance at scale.</p>
+  </div>
+
+  <!-- SERVICES -->
+  <section>
+    <div class="section-label">Services</div>
+    <h2>Campaign management & automation</h2>
+    <p>I manage Google Ads accounts through a centralized MCC across multiple client verticals — fashion, home goods, wholesale textiles, B2B distributors, and financial services.</p>
+    <div class="services">
+      <div class="service-item">
+        <h3>Campaign Architecture</h3>
+        <p>Search, Shopping, and Performance Max campaign builds from brief to launch.</p>
+      </div>
+      <div class="service-item">
+        <h3>Ongoing Optimization</h3>
+        <p>Negative keyword management, bid strategy tuning, and RSA copy testing.</p>
+      </div>
+      <div class="service-item">
+        <h3>Keyword Research</h3>
+        <p>Keyword Planner analysis, match type strategy, and ad group architecture.</p>
+      </div>
+      <div class="service-item">
+        <h3>Automation Tools</h3>
+        <p>Internal scripts and API integrations for campaign management at scale.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOL -->
+  <section>
+    <div class="section-label">Internal Tool</div>
+    <h2>Google Ads automation platform</h2>
+    <p>I am developing an internal tool that connects to the Google Ads API to automate recurring optimization tasks across all client accounts under my MCC. The tool is for my exclusive internal use — it is not distributed, resold, or offered as a SaaS product.</p>
+    <div class="tool-block">
+      <h3>Automated modules</h3>
+      <ul class="module-list">
+        <li><span><strong>Budget Pacing</strong> — redistributes daily budgets proportionally to match monthly spend targets without pausing campaigns.</span></li>
+        <li><span><strong>Negative Keywords</strong> — reads Search Terms reports, identifies zero-conversion terms above impression thresholds, and adds exact-match negatives at campaign level for both Search and Performance Max.</span></li>
+        <li><span><strong>Keyword Pausing</strong> — pauses keywords by spend, CPC relative to account average, CPA relative to account average, or zero search volume. New keywords are excluded automatically.</span></li>
+        <li><span><strong>ROAS Adjustment</strong> — reads actual conversion value data from the last 14 days and adjusts tROAS targets for Maximize Conversion Value campaigns.</span></li>
+        <li><span><strong>Performance Max Monitoring</strong> — alerts on low-ROAS asset groups, identifies underperforming placements, and adjusts campaign budgets based on day-of-week ROAS patterns.</span></li>
+        <li><span><strong>RSA Builder</strong> — generates responsive search ad copy from product data using the Keyword Plan Idea Service and existing asset performance signals.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- API -->
+  <section>
+    <div class="section-label">API Usage</div>
+    <h2>Google Ads API services</h2>
+    <p>The tool uses the following Google Ads API services to read account data and apply changes programmatically.</p>
+    <table class="api-table">
+      <thead>
+        <tr>
+          <th>API Service</th>
+          <th>Used For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><code>GoogleAdsService</code></td><td>Query campaigns, keywords, search terms, and RSA asset performance</td></tr>
+        <tr><td><code>CampaignBudgetService</code></td><td>Read and update daily campaign budgets</td></tr>
+        <tr><td><code>CampaignCriterionService</code></td><td>Add negative keywords at campaign level</td></tr>
+        <tr><td><code>AdGroupCriterionService</code></td><td>Pause underperforming keywords</td></tr>
+        <tr><td><code>CampaignService</code></td><td>Read bidding strategies and tROAS targets</td></tr>
+        <tr><td><code>KeywordPlanIdeaService</code></td><td>Generate keyword ideas for new campaign launches</td></tr>
+        <tr><td><code>AdService</code></td><td>Read RSA asset labels and create new responsive search ads</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+    <div class="section-label">Contact</div>
+    <h2>Get in touch</h2>
+    <p>Questions about the API application or my work managing Google Ads campaigns.</p>
+    <div class="contact-block">
+      <div class="contact-row">
+        <span class="contact-label">Name</span>
+        <span class="contact-value">Julian Suss</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">Email</span>
+        <span class="contact-value"><a href="mailto:julian.suss@gmail.com">julian.suss@gmail.com</a></span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">Website</span>
+        <span class="contact-value"><a href="https://linkedin.com/in/juliansuss">linkedin.com/in/juliansuss</a></span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">MCC ID</span>
+        <span class="contact-value">602-402-1674</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Julian Suss — Google Ads automation tools for independent campaign management
+  </footer>
+
+</div>
+</body>
+</html>
