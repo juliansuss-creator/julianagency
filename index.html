@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Julian Suss Ads Tool</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#1a1f36;line-height:1.7}
+.wrap{max-width:680px;margin:0 auto;padding:0 24px}
+nav{padding:20px 0;border-bottom:1px solid #e8e8f0;display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:600;font-size:15px}
+.hero{padding:64px 0;border-bottom:1px solid #e8e8f0}
+.app-name{font-size:12px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
+h1{font-size:36px;font-weight:600;line-height:1.2;margin-bottom:20px;letter-spacing:-.5px}
+.hero p{font-size:17px;color:#4b5563;max-width:520px}
+section{padding:48px 0;border-bottom:1px solid #e8e8f0}
+h2{font-size:20px;font-weight:600;margin-bottom:16px}
+p{font-size:15px;color:#4b5563;margin-bottom:12px}
+ul{padding-left:20px;margin-bottom:12px}
+li{font-size:15px;color:#4b5563;margin-bottom:8px}
+table{width:100%;border-collapse:collapse;margin-top:20px;font-size:13px}
+th{text-align:left;padding:10px 14px;background:#f8f9fc;border:1px solid #e8e8f0;font-weight:600;color:#1a1f36}
+td{padding:10px 14px;border:1px solid #e8e8f0;color:#4b5563;vertical-align:top}
+tr:nth-child(even) td{background:#fafafa}
+code{font-family:monospace;font-size:12px;background:#f1f1f5;padding:2px 5px;border-radius:3px}
+footer{padding:32px 0;font-size:12px;color:#9ca3af}
+a{color:#1a1f36}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav>
+  <span class="logo">Julian Suss Ads Tool</span>
+  <a href="mailto:julian.suss@gmail.com">julian.suss@gmail.com</a>
+</nav>
+
+<div class="hero">
+  <div class="app-name">Julian Suss Ads Tool</div>
+  <h1>Julian Suss Ads Tool</h1>
+  <p>An internal tool built by Julian Suss to automate Google Ads campaign optimization across multiple client accounts. This tool uses the Google Ads API to perform budget pacing, negative keyword management, keyword pausing, ROAS adjustment, and Performance Max monitoring automatically.</p>
+</div>
+
+<section>
+  <h2>About This Application</h2>
+  <p>Julian Suss Ads Tool is an internal application developed by Julian Suss, an independent Google Ads consultant managing campaigns for e-commerce and B2B clients in Argentina and Mexico through MCC account 602-402-1674.</p>
+  <p>The tool is used exclusively for internal campaign management purposes. It is not distributed, resold, or offered as a service to third parties. All Google Ads accounts accessed by this tool belong to clients who have explicitly authorized management access.</p>
+  <p>The application connects to the Google Ads API using OAuth 2.0 authorization to read account data and apply optimizations automatically on a scheduled basis.</p>
+</section>
+
+<section>
+  <h2>What This Tool Does</h2>
+  <p>The Julian Suss Ads Tool automates the following tasks across all managed client accounts:</p>
+  <ul>
+    <li><strong>Budget Pacing</strong> — Reads monthly budget caps and redistributes daily budgets proportionally to avoid overspending without pausing campaigns.</li>
+    <li><strong>Negative Keyword Management</strong> — Reads Search Terms reports and adds exact-match negative keywords for terms with zero conversions above a minimum impression threshold. Covers both Search and Performance Max campaigns.</li>
+    <li><strong>Keyword Pausing</strong> — Automatically pauses keywords with excessive spend and no conversions, high CPC relative to account average, high CPA relative to account average, or zero search volume. New keywords are excluded.</li>
+    <li><strong>ROAS Adjustment</strong> — Reads actual conversion value data from the last 14 days and adjusts Target ROAS settings for Maximize Conversion Value campaigns.</li>
+    <li><strong>Performance Max Monitoring</strong> — Monitors Performance Max campaigns for low ROAS, underperforming placements, and audience signal performance. Sends automated alerts when thresholds are breached.</li>
+    <li><strong>RSA Generation</strong> — Uses the Keyword Plan Idea Service and existing RSA asset performance data to generate optimized responsive search ad copy for new campaigns.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>API Services Used</h2>
+  <table>
+    <thead><tr><th>Service</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td><code>GoogleAdsService</code></td><td>Query campaigns, keywords, search terms, and RSA asset performance</td></tr>
+      <tr><td><code>CampaignBudgetService</code></td><td>Read and update daily campaign budgets</td></tr>
+      <tr><td><code>CampaignCriterionService</code></td><td>Add negative keywords at campaign level</td></tr>
+      <tr><td><code>AdGroupCriterionService</code></td><td>Pause underperforming keywords</td></tr>
+      <tr><td><code>CampaignService</code></td><td>Read bidding strategies and tROAS targets</td></tr>
+      <tr><td><code>KeywordPlanIdeaService</code></td><td>Generate keyword ideas for new campaigns</td></tr>
+      <tr><td><code>AdService</code></td><td>Read RSA asset performance labels and create new ads</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Data & Privacy</h2>
+  <p>This tool accesses Google Ads account data solely to perform the optimization tasks described above. No data is stored in external databases or shared with third parties. All processing is done in real time.</p>
+  <p>For full details see the <a href="https://juliansuss-creator.github.io/julianagency/privacy.html">Privacy Policy</a>.</p>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>Julian Suss<br>
+  Independent Google Ads Consultant<br>
+  MCC ID: 602-402-1674<br>
+  <a href="mailto:julian.suss@gmail.com">julian.suss@gmail.com</a></p>
+</section>
+
+<footer>© 2026 Julian Suss Ads Tool — Julian Suss</footer>
+
+</div>
+</body>
+</html>
